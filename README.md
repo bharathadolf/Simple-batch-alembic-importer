@@ -10,34 +10,22 @@ A lightweight Python / PySide2 tool for **SideFX Houdini** to batch import and o
 
 ## Why I Built This
 
-I developed this tool while doing some freelance pipeline work for a small animation & VFX studio in Hyderabad. 
-
-Their layout and lighting artists were receiving shots with dozens of separate Alembic caches (characters, props, crowd, environment elements). Bringing them into Houdini manually one by one, setting paths, building subnets, and renaming nodes to match their internal pipeline standards was tedious and eating up too much production time.
-
-On top of that, cache directories often had simulation scratch files, velocity passes, and proxies dumped in the same folders (`_sim`, `_vel`, `_proxy`) that the lighting team didn't want in their scene. 
-
-This tool automates that entire handoff: point it to a folder, filter out unwanted passes, sanitize names according to Houdini syntax, and bring everything in organized cleanly under a central `SCENE` null.
+Built while freelancing for an animation & VFX studio in Hyderabad. Artists had shots with dozens of Alembic caches per scene, and importing them one by one, filtering out intermediate passes (`_sim`, `_vel`, `_proxy`), and building subnets manually was eating up hours. This tool automates the entire ingestion in a few clicks.
 
 ---
 
 ## Features
 
-- **Drag & Drop Folder Loading:** Drag a shot or cache folder straight from your OS file explorer into the dialog, or use the Browse button.
-- **Recursive Scanning:** Finds all `.abc` files in subdirectories automatically.
-- **Pattern & Keyword Filtering:**
-  - Wildcard pattern matching (e.g. `*char*` or `shot_020_*`).
-  - Exclusion list (defaults to `_sim, _vel, _proxy`) so artists don't accidentally pull in heavy simulation or proxy data.
-- **Studio Naming Sanitization:** Automatically cleans up file basenames into valid Houdini node names (strips illegal characters, prefixes digits with underscores).
-- **Import Modes:**
-  - Standard **Alembic Archive** (`alembicarchive`) for layout/lighting.
-  - **ROP Alembic** (`rop_alembic`) if you need output nodes for caching or processing.
-- **Subnet Organization:** Groups each imported asset inside its own subnet container and runs an auto-layout so the network editor stays clean.
-- **Auto-connect to SCENE Null:** Automatically looks for (or creates) an `/obj/SCENE` null node and wires all imported nodes/subnets into it.
-- **Duplicate & Reload Handling:**
-  - Option to skip already imported files.
-  - Option to reload existing nodes (updates the path and hits reload on the node).
-- **Dry Run Mode:** Test your filter settings first without creating any nodes in your scene. The log will print exactly what would be imported, reloaded, or skipped.
-- **File Metadata Preview:** Click any file in the list to check its size (MB) and last modified timestamp before importing.
+- **Drag & Drop:** Drop any cache folder directly into the tool.
+- **Recursive Scan:** Finds all `.abc` files across nested subdirectories.
+- **Wildcard & Exclude Filters:** Target specific assets (`*hero*`) and skip unwanted passes (`_sim, _vel, _proxy`).
+- **Node Name Sanitization:** Converts filenames into valid Houdini node names (handles illegal characters and numbers).
+- **Archive & ROP Modes:** Supports standard `alembicarchive` geometry nodes and `rop_alembic` output nodes.
+- **Subnet Organization:** Packages each import into its own subnet and auto-arranges the network layout.
+- **SCENE Null Hookup:** Automatically connects imported nodes to an `/obj/SCENE` null.
+- **Duplicate & Reload Handling:** Skip duplicates or reload existing nodes with updated cache paths.
+- **Dry Run Mode:** Preview what will be imported or skipped in the log before modifying your scene.
+- **File Details:** View file size and last modified date for any selected cache.
 
 ---
 
