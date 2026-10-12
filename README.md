@@ -1,5 +1,10 @@
 # Simple Batch Alembic Importer
 
+[![Houdini Version](https://img.shields.io/badge/SideFX%20Houdini-18.5%20%7C%2019.x%20%7C%2020.x%2B-orange?logo=sidefx&logoColor=white)](https://www.sidefx.com/)
+[![Python](https://img.shields.io/badge/Python-3.x%20%7C%20PySide2-blue?logo=python&logoColor=white)](https://www.python.org/)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20Linux%20%7C%20macOS-lightgrey)]()
+
 A lightweight Python / PySide2 tool for **SideFX Houdini** to batch import and organize multiple Alembic (`.abc`) cache files in one go.
 
 ![Demo](assets/demo.gif)
@@ -80,9 +85,11 @@ exec(open(r"D:/Alembic Importer/Alembic_importer.py").read())
 ## Requirements
 
 - **SideFX Houdini:** Tested on Houdini 18.5, 19.x, and 20.x
-- **Python:** Python 3 (standard with modern Houdini installs)
-- **GUI:** PySide2 (comes built-in with Houdini)
-- **OS:** Windows, Linux, macOS
+
+[![Houdini Version](https://img.shields.io/badge/SideFX%20Houdini-18.5%20%7C%2019.x%20%7C%2020.x%2B-orange?logo=sidefx&logoColor=white)](https://www.sidefx.com/)
+[![Python](https://img.shields.io/badge/Python-3.x%20%7C%20PySide2-blue?logo=python&logoColor=white)](https://www.python.org/)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20Linux%20%7C%20macOS-lightgrey)]()
 
 ---
 
